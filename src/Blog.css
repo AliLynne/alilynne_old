@@ -1,0 +1,22 @@
+.Blog {
+  padding: 10px;
+  text-align: center;
+  max-width: 80vw;
+}
+
+.Blog__List {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+
+.BlogPost {
+  text-align: left;
+}
+
+.BlogPost__Image {
+  max-width: 80vw;
+  max-height: 70vh;
+}
