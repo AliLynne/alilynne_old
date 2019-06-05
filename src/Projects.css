@@ -1,0 +1,12 @@
+.Projects__List,
+.Project__List {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
+
+.Projects__ListItem,
+.Project__ListItem {
+  padding-top: 5px;
+}
