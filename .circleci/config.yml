@@ -18,7 +18,7 @@ jobs:
       - run: 'yarn test'
       - run:
           name: Install Firebase Tools
-          command: yarn add firebase-tools
+          command: yarn add -g firebase-tools
       - run:
-          name: Deploy
-          command: firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+          name: Deploy to Firebase
+          command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN
