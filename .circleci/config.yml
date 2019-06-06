@@ -17,8 +17,8 @@ jobs:
           key: 'v1-dependencies-{{ checksum "package.json" }}'
       - run: 'yarn test'
       - run:
-        name: Install Firebase Tools
-        command: yarn install firebase-tools
+          name: Install Firebase Tools
+          command: yarn install firebase-tools
       - run:
-        name: Deploy
-        command: firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+          name: Deploy
+          command: firebase deploy --token=$FIREBASE_TOKEN --non-interactive
