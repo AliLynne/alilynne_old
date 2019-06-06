@@ -21,7 +21,7 @@ const list = [
 function Projects(props) {
   return (
     <div className="Projects">
-      <h3 className="Projects__Headline">Projects</h3>
+      <h3 className="Projects__Headline">I am a list of Projects</h3>
       <ul className="Projects__List">
         {list.map((project) => {
           return (
