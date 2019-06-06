@@ -1,16 +1,18 @@
 version: 2.1
-description: Orb for firebase deploy.
-commands:
-  deploy:
-    description: Deploy to firebase
-    parameters:
-      token:
-        type: string
-        description: Firebase Deploy Token
+jobs:
+  build:
+    docker:
+      - image: 'circleci/node:8'
+    working_directory: ~/repo
     steps:
-      - run:
-          name: Install Firebase Tools
-          command: npm install --prefix=./firebase-deploy firebase-tools
-      - run:
-          name: Deploy to Firebase
-          command: ./firebase-deploy/node_modules/.bin/firebase deploy --token=<< parameters.token >>
+      - checkout
+      - restore_cache:
+          keys:
+            - 'v1-dependencies-{{ checksum "package.json" }}'
+            - v1-dependencies-
+      - run: 'yarn install'
+      - save_cache:
+          paths:
+            - node_modules
+          key: 'v1-dependencies-{{ checksum "package.json" }}'
+      - run: 'yarn test'
