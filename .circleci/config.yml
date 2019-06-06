@@ -19,6 +19,17 @@ jobs:
       - run:
           name: 'Build Project'
           command: 'yarn build'
+  deploy:
+    description: Deploy to firebase
+    parameters:
+      token:
+        type: string
+        description: Firebase Deploy Token
+    steps:
       - run:
-          name: 'Deploy to Firebase Hosting'
-          command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
+          name: Install Firebase Tools
+          command: npm install --prefix=./firebase-deploy firebase-tools
+      - run:
+          name: Deploy to Firebase
+          command: ./firebase-deploy/node_modules/.bin/firebase deploy --token=<< parameters.token >>
+      
