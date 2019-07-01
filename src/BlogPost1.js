@@ -2,7 +2,7 @@ import React from 'react';
 import screenshot1 from './assets/firstcolumn.png';
 import screenshot2 from './assets/firstship.png';
 
-function BlogPost() {
+function BlogPost1() {
   return (
     <li className="BlogPost">
       <header>
@@ -43,4 +43,4 @@ function BlogPost() {
   );
 }
 
-export default BlogPost;
+export default BlogPost1;
