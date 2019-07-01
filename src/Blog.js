@@ -1,5 +1,6 @@
 import React from 'react';
-import BlogPost from './BlogPost';
+import BlogPost1 from './BlogPost1';
+import BlogPost2 from './BlogPost2';
 import './Blog.css'
 
 function Blog() {
@@ -8,7 +9,8 @@ function Blog() {
       <header className="Blog__Header">
         <h3 className="Blog__Title">Blog</h3>
         <ul className="Blog__List">
-          <BlogPost />
+          <BlogPost2 />
+          <BlogPost1 />
         </ul>
       </header>
     </div>
